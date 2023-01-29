@@ -1,0 +1,54 @@
+#include <iostream>
+#include <iomanip>
+
+
+using namespace std;
+
+int main() {
+    // Write your main here
+
+//Variables
+double merchandise_cost;
+double salary;
+double rent;
+double electricity;
+
+double total_expenses = 0; 
+double markup_price, mark_percentage = 0; 
+
+cout << fixed << showpoint << setprecision(2);
+
+cout << "Enter the total cost of the merchandise: ";
+cin >> merchandise_cost;
+cout << endl;
+
+cout << "Enter the salary of all employees ";
+cin >> salary;
+cout << endl;
+
+cout << "Enter the yearly rent ";
+cin >> rent;
+cout << endl;
+
+cout << "Enter the electricity cost ";
+cin >> electricity;
+cout << endl;
+
+
+//Calculate total expenses 
+total_expenses = merchandise_cost + salary + rent + electricity; 
+
+//Get Markup price 
+markup_price = (0.1*merchandise_cost+total_expenses)/0.85;
+
+//Get Markup percentage 
+mark_percentage = (markup_price*100)/merchandise_cost;
+
+cout << "markup_percentage: " << mark_percentage 
+    << "\n";
+
+
+
+
+    return 0;
+}
