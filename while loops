@@ -1,0 +1,91 @@
+//Write a program that uses while loops to perform the following steps:
+
+Prompt the user to input two integers: firstNum and secondNum
+(firstNum must be less than secondNum).
+Output all odd numbers between firstNum and secondNum.
+Separate each number with a space
+Output the sum of all even numbers between firstNum and secondNum.
+Output the numbers and their squares between 1 and 10.
+Output the sum of the square of the odd numbers between firstNum and secondNum.
+Output all uppercase letters.
+Separate each letter with a space//
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Write your main here
+
+    // Declare variables
+    int firstNum, secondNum;
+
+    // Step 1
+do
+{
+cout << "Enter Two Positive Numbers. " << endl; 
+cout << "First Number Must Be Less Than The Second Number: " << endl;
+cin >> firstNum >> secondNum;
+}while(firstNum > secondNum);
+
+    // Step 2 
+    
+int i= firstNum;
+cout << "\nThe odd numbers between " << firstNum << " and " << secondNum << " are:";
+if(firstNum % 2 == 0 )
+i = firstNum + 1;
+do
+{
+cout<<i<<" ";
+i = i+2; //increment counter by two
+}while(i<secondNum+1);
+
+    // Step 3
+
+i = firstNum;
+int sum = 0;
+do
+{
+if(i%2 == 0) // checking if i is even
+sum = sum + i; // if even, then add i to sum
+i++; // incrementing the counter
+}while(i<secondNum+1);
+cout<<"\n Sum of even integers between "<<firstNum<<" and "<<secondNum << " is: "<<sum<<endl;
+
+    // Step 4
+
+cout<<"\nNumbers and their squares between 1 and 10 "<<endl;
+i = 1;
+do
+{
+cout<<i <<" "<<(i*i)<<endl;
+i++;
+}while(i<11);
+
+
+    // Step 5
+
+i = firstNum;
+sum = 0;
+do
+{
+if(i % 2 ==1)
+sum = sum + (i*i);
+i++;
+}while(i<secondNum+1);
+cout<<"\n Sum of the squares of odd integers between "<<firstNum<<" and "<<secondNum << " is: "<<sum<<endl;
+
+    // Step 6
+i = 0;
+char start = 'A';
+cout << "Upper case letters are: ";
+do
+{
+cout << char(start + i) << " "; // print upper case letters starting from A
+i++;
+}while(i < 26);
+
+
+    return 0;
+}
